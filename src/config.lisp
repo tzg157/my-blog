@@ -23,7 +23,7 @@
   `(:databases ((:maindb :sqlite3 :database-name ":memory:"))))
 
 (defconfig |development|
-  '(:databases (:maindb :mysql :database-name ":blog:" :username "root" :password "01830728lx" :port 3306)))
+  '(:databases (:maindb :mysql :database-name ":blog:" :username "root" :password "123456" :port 3306)))
 
 (defconfig |production|
   '())
