@@ -31,9 +31,10 @@
 				  :components 
 				  ((:file "dao")
  				   (:file "user-dao" :depends-on ("dao"))))
-				 (:module "modules" 
+				 (:module "module" 
 				  :components 
-				  ((:file "modules"))
-				   (:file "user" :depends-on ("modules")))))
-  :description ""
+				  ((:file "modules")
+				   (:file "user" :depends-on ("modules"))))
+				 )))
+  :description "a blog."
   :in-order-to ((test-op (load-op my-blog-test))))
