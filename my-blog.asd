@@ -13,13 +13,10 @@
                :envy
                :cl-ppcre
                :uiop
-
                ;; for @route annotation
                :cl-syntax-annot
-
                ;; HTML Template
                :djula
-
                ;; for DB
                :datafly
                :sxql)
@@ -29,6 +26,14 @@
                  (:file "web" :depends-on ("view"))
                  (:file "view" :depends-on ("config"))
                  (:file "db" :depends-on ("config"))
-                 (:file "config"))))
+                 (:file "config")
+				 (:module "dao"
+				  :components 
+				  ((:file "dao")
+ 				   (:file "user-dao" :depends-on ("dao"))))
+				 (:module "modules" 
+				  :components 
+				  ((:file "modules"))
+				   (:file "user" :depends-on ("modules")))))
   :description ""
   :in-order-to ((test-op (load-op my-blog-test))))

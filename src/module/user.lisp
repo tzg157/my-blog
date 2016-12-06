@@ -1,6 +1,27 @@
-(use-package '(:my-blog.db :datafly :sxql))
+(in-package :my-blog.module)
 
-(import 'my-blog.config "APP_ENV")
-
-(setf (osicat:environment-variable "APP_ENV") "development")
-(config :debug)
+(defclass user ()
+  ((name
+	:accessor name
+	:initarg :name
+	:initform (error "用户名不能为空.")
+	)
+   (password
+	:accessor password
+	:initarg :password
+	:initform (error "密码不能为空.")
+	)
+   (mail
+	:accessor mail
+	:initarg :mail
+	:initform (error "邮箱不能为空."))
+   (sex
+	:accessor sex
+	:initarg :sex
+	:initform 0
+	:documentation "0-男,1-女")
+   (phone
+	:accessor phone
+	:initarg :phone
+	))
+  )
